@@ -1,0 +1,10 @@
+public static void main(String[] args) {  
+        int numero1;
+        int numero2;
+        Scanner leitorScanner = new Scanner(System.in);
+        numero1 = leitorScanner.nextInt();
+        numero2 = leitorScanner.nextInt();
+        int soma = numero1 + numero2; 
+        System.out.println(soma);
+        } 
+}
