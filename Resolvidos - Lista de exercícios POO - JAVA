@@ -1,0 +1,1383 @@
+- 2. Crie uma classe para implementar uma ContaCorrente. A classe deve possuir os seguintes atributos: número da conta, nome do correntista e saldo. Os métodos são os seguintes: alterarNome, depósito e saque; No construtor, saldo é opcional, com valor default zero e os demais atributos são obrigatórios.
+    
+    ```java
+    import java. util.Scanner;
+    public class App { 
+        
+        
+        
+        public static void main(String[] args) { 
+            
+             Scanner leitor = new Scanner(System.in); 
+             
+             
+             pessoa ObjetoPessoa = new pessoa(1000.0f);
+             
+             //ObjetoPessoa.setSaldo(1000);// Define o saldo usando o método setSaldo
+             
+             //teste 1 (Mostar o nome de private)
+             System.out.println("Qual a sua nome: ");
+             ObjetoPessoa.setAlterarNome(leitor.next());
+             //mostar o nome digitado
+             System.out.println(ObjetoPessoa.getAlterarNome());
+             
+             //teste 2 (depositar)
+              System.out.println("Digite o valor do deposito: ");
+              ObjetoPessoa.setDepositar(leitor.nextFloat());
+              //mostar o nome digitado
+             System.out.println(ObjetoPessoa.getDepositar());
+              
+             
+              //teste 2 (Sacar)
+              System.out.println("Digite o valor do deposito: ");
+              ObjetoPessoa.setSacar(leitor.nextFloat());
+              //mostar o nome digitado
+              System.out.println(ObjetoPessoa.getSaldo());
+    } 
+    }
+    ```
+    
+    ```java
+    public class pessoa{
+               //atributos
+         private String nomeCorrentista;
+         private float numeroConta;
+         private float saldo;
+        
+         pessoa(float saldo){
+             this.saldo = saldo;}
+    
+                                  //métodos1
+                                        public void setAlterarNome(String novoNome){
+                                        this.nomeCorrentista = novoNome;}  
+    
+                                        public String getAlterarNome(){
+                                        return nomeCorrentista;}
+    
+                                 //métodos2
+                                        
+                                       public void setDepositar(float novoSaldo){
+                                       this.saldo += novoSaldo;}
+                                       
+                                        public float getDepositar(){
+                                        return saldo;}              
+                                        
+                                  //métodos3
+                                            
+                                         public float setSacar(float valorSaque) {
+                                             if (valorSaque <= getSaldo()) {
+                                             this.saldo -= valorSaque;
+                                             return valorSaque; // Retorna o valor sacado
+                                                }   else {
+                                                    return 0; }}// Retorna 0 para indicar um saque sem sucesso
+                                         
+                                public float getSaldo() {
+                                    return saldo;
+                                }
+                                }
+    ```
+    
+- 3. Crie uma classe para representar uma BombaCombustivel. A classe BombaCombustivel deve conter os seguintes atributos: tipo de combustível, valor por litro e quantidade de combustível. Além desses atributos a classes deve conter os seguintes métodos.
+a. abastecerPorValor; //método onde é informado o valor a ser abastecido e mostra a quantidade de litros que foi colocada no veículo
+b. abastecerPorLitro; // método onde é informado a quantidade em litros de combustível e mostra o valor a ser pago pelo cliente.
+c. alterarValor; //altera o valor do litro do combustível.
+d. alterarCombustivel; //altera o tipo do combustível.
+e. alterarQuantidadeCombustivel; //altera a quantidade de combustível restante na bomba.
+Crie uma classe que contenha um método main para testar sua classe BombaCombustível
+    
+    ```java
+    // classe objeto
+    
+    package Exercicio15;
+    
+    /* 3. Crie uma classe para representar uma BombaCombustivel. A classe BombaCombustivel deve conter os seguintes atributos: tipo de combustível,
+    valor por litro e quantidade de combustível. Além desses atributos a classes deve conter os seguintes métodos.
+    a. abastecerPorValor; //método onde é informado o valor a ser abastecido e mostra a quantidade de litros que foi colocada no veículo
+    b. abastecerPorLitro; // método onde é informado a quantidade em litros de combustível e mostra o valor a ser pago pelo cliente.
+    c. alterarValor; //altera o valor do litro do combustível.
+    d. alterarCombustivel; //altera o tipo do combustível.
+    e. alterarQuantidadeCombustivel; //altera a quantidade de combustível restante na bomba.
+    Crie uma classe que contenha um método main para testar sua classe BombaCombustível
+    */
+    
+        public class pessoa{
+               //atributos
+         private String tipoCombustível = " ";
+         private float valorDoLitro = 0.0f;
+         private float quantidadeCombustível = 0.0f;
+         private float valorPago = 0.0f;
+         private float valorGasto = 0.0f;
+        
+         pessoa(){
+             
+         }
+                            //a. abastecerPorValor; //método onde é informado o valor a ser abastecido e mostra a quantidade de litros que foi colocada no veículo
+                            public void abastecerPorValor(float qtdGasolina){
+                            quantidadeCombustível += qtdGasolina / valorDoLitro;
+                            valorGasto += qtdGasolina;
+                            } 
+                            
+     
+                            // b. abastecerPorLitro; // método onde é informado a quantidade em litros de combustível e mostra o valor a ser pago pelo cliente.    
+                            public void abastecerPorLitro(){
+                            this.valorPago += valorGasto * valorDoLitro;
+                            System.out.println("O valor pago é: " + valorPago + " e a quantidade de combustível é: " + quantidadeCombustível);
+                            }
+                           //c. alterarValor; //altera o valor do litro do combustível.
+                            public void alterarCombustivel(float NovoValor){
+                            this.valorDoLitro = NovoValor;
+                            System.out.println(this.valorDoLitro);}
+                            
+                            //d. alterarCombustivel; //altera o tipo do combustível.
+                            public void alterarTipoC(String novoTipo){
+                            this.tipoCombustível = novoTipo;}
+                            
+                             //e. alterarQuantidadeCombustivel; //altera a quantidade de combustível restante na bomba.
+                            public void alterarQtdC (float novaQtdC){
+                                this.quantidadeCombustível = novaQtdC;
+                            }
+                            
+    
+         
+         //-----------------------------
+         
+         
+         
+    
+        public String getTipoCombustível() {
+            return tipoCombustível;
+        }
+    
+        public void setTipoCombustível(String tipoCombustível) {
+            this.tipoCombustível = tipoCombustível;
+        }
+    
+        public float getValorDoLitro() {
+            return valorDoLitro;
+        }
+    
+        public void setValorDoLitro(float valorDoLitro) {
+            this.valorDoLitro = valorDoLitro;
+        }
+    
+        public float getQuantidadeCombustível() {
+            return quantidadeCombustível;
+        }
+    
+        public void setQuantidadeCombustível(float quantidadeCombustível) {
+            this.quantidadeCombustível = quantidadeCombustível;
+        }
+    
+         
+        public float getsetValorPago() {
+            return valorPago;
+        }
+    
+        public void setValorPago(float valorPago) {
+            this.valorPago = valorPago;}
+         
+     
+        public float getValorGasto() {
+            return valorGasto;
+        }
+    
+        public void setValorGasto(float valorGasto) {
+            this.valorGasto = valorGasto;}
+     
+        }
+    
+    //classe main
+    
+    package Exercicio15;
+    
+    /*Crie uma classe para implementar uma ContaCorrente. A classe deve possuir os seguintes atributos:
+    número da conta, nome do correntista e saldo. Os métodos são os seguintes: alterarNome, depósito e
+    saque; No construtor, saldo é opcional, com valor default zero e os demais atributos são obrigatórios.
+    */
+    
+    import java. util.Scanner;
+    public class App { 
+        
+        
+        
+        public static void main(String[] args) { 
+            
+             Scanner leitor = new Scanner(System.in); 
+             
+             
+             pessoa ObjetoPessoa = new pessoa();
+             
+                 
+             //teste 1 (abastecerPorValor; //método onde é informado o valor a ser abastecido e mostra a quantidade de litros que foi colocada no veículo)
+            System.out.println("Qual o valor do litro?");
+            ObjetoPessoa.setValorDoLitro(leitor.nextFloat());
+            System.out.println("Qual o valor que você deseja colocar?");
+            ObjetoPessoa.abastecerPorValor(leitor.nextFloat());
+            
+            System.out.println("Você colocou L: ");
+            System.out.println(ObjetoPessoa.getQuantidadeCombustível());
+            System.out.println("Você gastou um total de: ");
+            System.out.println(ObjetoPessoa.getValorGasto());
+            
+           
+            //teste 2
+    
+            //teste 2: abastecer por litro
+            System.out.println("o item dois: ");
+            ObjetoPessoa.abastecerPorLitro();
+            
+            //teste 3 
+            
+            System.out.println("O novo valor do litro é: ");
+            ObjetoPessoa.alterarCombustivel(leitor.nextFloat());
+            ObjetoPessoa.getValorDoLitro();
+           // System.out.println("O novo valor do litro é: ");
+           // ObjetoPessoa.alterarCombustivel(leitor.nextFloat());
+           // System.out.println(ObjetoPessoa.getValorDoLitro());
+           
+            // teste 4
+            System.out.println("Altere o tipo de combustível: ");
+            ObjetoPessoa.alterarTipoC(leitor.next());
+            ObjetoPessoa.getTipoCombustível();
+            
+            // teste 5
+            System.out.println("Altere a quantidade de combustível:");
+            ObjetoPessoa.alterarQtdC(leitor.nextFloat());
+            ObjetoPessoa.getQuantidadeCombustível();
+            System.out.println("FIM");
+    
+            
+        }   
+        }
+    ```
+    
+    ```java
+    //primeiro teste
+    public class pessoa{
+               //atributos
+         private String tipoCombustível;
+         private float valorLitro;
+         private float quantidadeCombustível;
+        
+        
+         //pessoa(float saldo){
+           //  this.saldo = saldo;}
+    
+                                  //métodos1
+                                        public float setAbastecerPorValor(float abastecimento){
+                                        this.quantidadeCombustível += abastecimento;
+                                        System.out.println("Valor abastecido: " + abastecimento);
+                                        return abastecimento;
+                                        }
+    
+    //continuação
+    public static void main(String[] args) { 
+            
+             Scanner leitor = new Scanner(System.in); 
+             
+             
+             pessoa ObjetoPessoa = new pessoa();
+             
+         
+             
+             //ObjetoPessoa.setSaldo(1000);// Define o saldo usando o método setSaldo
+             
+             //teste 1 (abastecerPorValor; //método onde é informado o valor a ser abastecido e mostra a quantidade de litros que foi colocada no veículo)
+            System.out.println("Qual o valor que você deseja colocar?");
+            ObjetoPessoa.setAbastecerPorValor(leitor.nextFloat());
+            System.out.println(ObjetoPessoa.setAbastecerPorValor());
+    
+    /*   //teste 2 (depositar)
+              System.out.println("Digite o valor do deposito: ");
+              ObjetoPessoa.setDepositar(leitor.nextFloat());
+              //mostar o nome digitado
+             System.out.println(ObjetoPessoa.getDepositar());
+              
+             
+              //teste 2 (Sacar)
+              System.out.println("Digite o valor do deposito: ");
+              ObjetoPessoa.setSacar(leitor.nextFloat());
+              //mostar o nome digitado
+              System.out.println(ObjetoPessoa.getSaldo());*/
+    } 
+    }
+    ```
+    
+- 4. Crie uma classe denominada Elevador para armazenar as informações de um elevador dentro de um
+prédio. A classe deve armazenar o andar atual (térreo = 0), total de andares no prédio (desconsiderando o
+térreo), capacidade do elevador e quantas pessoas estão presentes nele. A classe deve também
+disponibilizar os seguintes métodos:
+a. Inicializa: que deve receber como parâmetros a capacidade do elevador e o total de andares no
+prédio (os elevadores sempre começam no térreo e vazio);
+b. Entra: para acrescentar uma pessoa no elevador (só deve acrescentar se ainda houver espaço);
+c. Sai: para remover uma pessoa do elevador (só deve remover se houver alguém dentro dele);
+d. Sobe: para subir um andar (não deve subir se já estiver no último andar);
+e. Desce: para descer um andar (não deve descer se já estiver no térreo);
+    
+    ```java
+    public class pessoa{
+               //atributos
+         private int andarAtual;
+         private int totalAndares;
+         private float capacidadeElevador;
+         private int qtdPessoas;
+                  
+          pessoa(int qtdPessoas, int totalAndares, int andarAtual){
+             this.qtdPessoas = qtdPessoas;
+             this.totalAndares = totalAndares;
+             this.andarAtual = andarAtual;
+               
+          }
+             
+                            //metodo =b. Entra: para acrescentar uma pessoa no elevador (só deve acrescentar se ainda houver espaço);
+             
+                               public void AcrescentarPessoa(int umaPessoa){
+                                   if (qtdPessoas > umaPessoa){
+                                   this.qtdPessoas -= umaPessoa;}
+                                   else{
+                                       System.out.println("Perigo de acidente, proibida a entrada:");
+                                   }}
+                                       
+                            // c. Sai: para remover uma pessoa do elevador (só deve remover se houver alguém dentro dele);
+                                    public void diminuirPessoa(int umaPessoa){
+                                    if (qtdPessoas > 0){
+                                    this.qtdPessoas += umaPessoa;}
+                                     else{
+                                       System.out.println("Perigo de acidente, proibida a entrada:");
+                                   }}
+                            
+                                    
+                            // d. Sobe: para subir um andar (não deve subir se já estiver no último andar);
+                                    public void selecionarAndar(int andarDesejado){
+                                    if (andarDesejado <= totalAndares && andarDesejado > 0){
+                                       this.andarAtual = andarDesejado;}
+                                    else{
+                                        System.out.println("Não existe mais andar acima");}
+                                    }        
+                            /*/e. Desce: para descer um andar (não deve descer se já estiver no térreo);       
+                                    public void selecionarAndar(int andar){
+                                    if (this.andarAtual > 0){
+                                       this.andarAtual += andar;}
+                                    else{
+                                        System.out.println("Não existe andar abaixo");}*/
+        public int getAndarAtual(){
+            return andarAtual;}
+    
+        public void setAndarAtual(int andarAtual) {
+            this.andarAtual = andarAtual;
+        }
+        public int getTotalAndares() {
+            return totalAndares;
+        }
+    
+        public void setTotalAndares(int totalAndares) {
+            this.totalAndares = totalAndares;
+        }
+    
+        public float getCapacidadeElevador() {
+            return capacidadeElevador;
+        }
+    
+        public void setCapacidadeElevador(float capacidadeElevador) {
+            this.capacidadeElevador = capacidadeElevador;
+        }
+    
+        public int getQtdPessoas() {
+            return qtdPessoas;
+        }
+    
+        public void setQtdPessoas(int qtdPessoas) {
+            this.qtdPessoas = qtdPessoas; }
+        }
+    
+    //
+    
+    // entrada (Permissão)
+             System.out.println("pode entrar no elevador, porém diga quantas pessoas vão entrar");
+             ObjetoPessoa.AcrescentarPessoa(leitor.nextInt());
+             //System.out.println("Ainda tem vaga para: ");
+             System.out.println(ObjetoPessoa.getQtdPessoas());
+             
+             
+            System.out.println("");
+    
+             
+             // saida(Permissão)
+             System.out.println("Quantas pessoas vão sair?");
+             ObjetoPessoa.diminuirPessoa(leitor.nextInt());
+             System.out.println(ObjetoPessoa.getQtdPessoas());
+    
+             System.out.println("");
+             
+             //subir elevador
+             System.out.println("Para qual andar você deseja ir?");
+             ObjetoPessoa.selecionarAndar(leitor.nextInt());
+             System.out.println("você tá no andar: " + ObjetoPessoa.getAndarAtual());
+    
+            System.out.println("");
+             
+            /* //Descer elevador
+             System.out.println("Para qual andar você deseja ir? só pode ir para baixo");
+             ObjetoPessoa.subirAndar(leitor.nextInt());
+             System.out.println("você tá no andar: " + ObjetoPessoa.getAndarAtual());*/
+    ```
+    
+- 5. Escreva uma classe cujos objetos representam alunos matriculados em uma disciplina. Cada objeto dessa
+classe deve guardar os seguintes dados do aluno: matrícula, nome, 2 notas de prova e 1 nota de trabalho.
+Escreva os seguintes métodos para esta classe:
+a. media: calcula a média final do aluno (cada prova tem peso 2,5 e o trabalho tem peso 2)
+b. final: calcula quanto o aluno precisa para a prova final (retorna zero se ele não for para a final)
+    
+    ```java
+    public void calcularMédia(){
+                                         MediaFinal = (2 * notaProva1 + 2 * notaProva2 + 2 * notaTrabalho) / (2 + 2 + 2);   
+                                         System.out.println(MediaFinal);}
+                                         
+                              
+                                       
+                            
+    
+                                        // b. final: calcula quanto o aluno precisa para a prova final (retorna zero se ele não for para a final)
+                                         public void testeFinal(){
+                                         float teste = (7 * 2) - MediaFinal;
+                                         System.out.println(teste);}
+                                         }
+    ```
+    
+- 6. Crie uma classe chamada Invoice que possa ser utilizado por uma loja de suprimentos de informática para representar uma fatura de um item vendido na loja. Uma fatura deve incluir as seguintes informações
+como atributos:
+a. o número do item faturado,
+b. a descrição do item,
+c. a quantidade comprada do item e
+d. o preço unitário do item.
+
+Sua classe deve ter um construtor que inicialize os quatro atributos. Se a quantidade não for positiva, ela deve ser configurada como 0. Se o preço por item não for positivo ele deve ser configurado como 0.0.
+Forneça os métodos getters e setters para cada variável de instância. Além disso, forneça um método chamado getInvoiceAmount que calcula o valor da fatura (isso é, multiplica a quantidade pelo preço por item) e depois retorna o valor como um double. Escreva um aplicativo de teste que demonstra as capacidades da classe Invoice.
+    
+    ```java
+    //class método
+    public class pessoa{
+               //atributos
+         private String itemFturado;
+         private String descriçãoItem;
+         private float quantidadeComprada;
+         private float preçoUnitárioItem;
+      
+         
+             pessoa(float quantidadeComprada,float preçoUnitárioItem, String itemFturado, String descriçãoItem){
+             this.quantidadeComprada = quantidadeComprada; 
+             this.preçoUnitárioItem = preçoUnitárioItem;  
+             this.itemFturado = itemFturado;
+             this.descriçãoItem = descriçãoItem;}
+    
+         
+         
+         
+         
+                                        //metodo = a. media: calcula a média final do aluno (cada prova tem peso 2,5 e o trabalho tem peso 2)
+                                          public void getInvoiceAmount(){
+                                              double valotTotal = quantidadeComprada * preçoUnitárioItem;
+                                              System.out.println("O valor total é: " + valotTotal);
+                                          }
+    
+    //class main
+    pessoa ObjetoPessoa = new pessoa(0.0f, 0.0f, "", "") ;
+             
+             ObjetoPessoa.setQuantidadeComprada(0.0f);
+             
+             
+             //entradas
+             ObjetoPessoa.setItemFturado(leitor.next());
+             ObjetoPessoa.setDescriçãoItem(leitor.next());
+             ObjetoPessoa.setQuantidadeComprada(leitor.nextFloat());
+             ObjetoPessoa.setPreçoUnitárioItem(leitor.nextFloat());
+    
+             
+             
+           
+             System.out.println("O id: "+ ObjetoPessoa.getItemFturado() + ", " + "Produto: " +ObjetoPessoa.getDescriçãoItem()+", " + "Qtd: "+ ObjetoPessoa.getQuantidadeComprada() + ", " + "valor und: " + ObjetoPessoa.getPreçoUnitárioItem());
+             ObjetoPessoa.getInvoiceAmount();
+    ```
+    
+- 7. A fim de representar funcionários em uma empresa, crie uma classe chamada Funcionario que inclui as
+três informações a seguir como atributos:
+a. um primeiro nome,
+b. um sobrenome
+c. um salário mensal
+Sua classe deve ter um construtor que inicializa os três atributos. Forneça os métodos getters e setters para
+cada atributo. Se o salário mensal não for positivo, configure-o como 0.0. Escreva um aplicativo de teste
+que demonstra as capacidades da classe. Crie duas instâncias da classe e exiba o salário anual de cada
+instância. Então dê a cada empregado um aumento de 10% e exiba novamente o salário anual de cada
+empregado.
+    
+    ```java
+    public static void main(String[] args) { 
+        Scanner leitor = new Scanner(System.in);
+    
+        Funcionario Empregado1 = new Funcionario("Mateus", "Oliveira", 5000.0);
+        Funcionario Empregado2 = new Funcionario("Pedro", "Carlos", 3000.0);
+    
+        Empregado1.Aumento(10);
+    
+        System.out.print("Novo salário de Empregado1: " + Empregado1.getSalarioMensal());
+    
+    //
+    
+    public class Funcionario{
+               //atributos
+         
+               private String primeiroNome;
+               private String sobrenome;
+               private double salarioMensal;
+    
+               public Funcionario(String primeiroNome, String sobrenome, double salarioMensal) {
+                this.primeiroNome = primeiroNome;
+                this.sobrenome = sobrenome;
+                // Verifica se o salário mensal é positivo e o configura como 0.0 se não for
+                if (salarioMensal > 0) {
+                    this.salarioMensal = salarioMensal;
+                } else {
+                    this.salarioMensal = 0.0;
+                }
+            }
+                 
+    
+                                         //metodo = a. media: calcula a média final do aluno (cada prova tem peso 2,5 e o trabalho tem peso 2)
+                                            public void Aumento(double porcentagem){
+                                            double aumento = salarioMensal * (porcentagem / 100);  
+                                            this.salarioMensal += aumento;
+                                            
+                                            }
+    ```
+    
+- 8. Escreva uma classe Data cuja instância (objeto) represente uma data. Esta classe deverá dispor dos
+seguintes métodos:
+a. Construtor: define a data que determinado objeto (através de parâmetro), este método verifica se a data está correta, caso não esteja a data é configurada como 01/01/0001
+b. Compara: recebe como parâmetro um outro objeto da Classe data, compare com a data corrente e retorne:
+i. 0 se as datas forem iguais;
+ii. 1 se a data corrente for maior que a do parâmetro;
+iii. -1 se a data do parâmetro for maior que a corrente.
+c. GetDia: retorna o dia da data
+d. GetMes: retorna o mês da data
+e. GetMesExtenso: retorna o mês da data corrente por extenso
+f. GetAno: retorna o ano da data
+g. IsBissexto: retorna verdadeiro se o ano da data corrente for bissexto e falso caso contrário
+h. Clone: o objeto clona a si próprio, para isto, ele cria um novo objeto da classe Data com os
+mesmos valores de atributos e retorna sua referência pelo método
+    
+    ```java
+    //Aqui está uma implementação da classe Data que atende aos requisitos especificados, incluindo os métodos de construtor, comparação, obtenção do dia, mês e ano, mês por extenso, verificação de ano bissexto e clonagem:
+    
+    import java.text.SimpleDateFormat;
+    import java.util.Date;
+    
+    public class Data {
+        private int dia;
+        private int mes;
+        private int ano;
+    
+        public Data(int dia, int mes, int ano) {
+            if (isValidDate(dia, mes, ano)) {
+                this.dia = dia;
+                this.mes = mes;
+                this.ano = ano;
+            } else {
+                this.dia = 1;
+                this.mes = 1;
+                this.ano = 1;
+            }
+        }
+    
+        public int compara(Data outraData) {
+            if (this.ano < outraData.ano) {
+                return -1;
+            } else if (this.ano > outraData.ano) {
+                return 1;
+            } else {
+                if (this.mes < outraData.mes) {
+                    return -1;
+                } else if (this.mes > outraData.mes) {
+                    return 1;
+                } else {
+                    if (this.dia < outraData.dia) {
+                        return -1;
+                    } else if (this.dia > outraData.dia) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }
+            }
+        }
+    
+        public int getDia() {
+            return dia;
+        }
+    
+        public int getMes() {
+            return mes;
+        }
+    
+        public String getMesExtenso() {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM");
+            Date data = new Date(ano - 1900, mes - 1, dia);
+            return dateFormat.format(data);
+        }
+    
+        public int getAno() {
+            return ano;
+        }
+    
+        public boolean isBissexto() {
+            return (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0));
+        }
+    
+        public Data clone() {
+            return new Data(this.dia, this.mes, this.ano);
+        }
+    
+        private boolean isValidDate(int dia, int mes, int ano) {
+            if (ano >= 1 && mes >= 1 && mes <= 12) {
+                int[] diasPorMes = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+                if (isBissexto(ano)) {
+                    diasPorMes[2] = 29;
+                }
+                return dia >= 1 && dia <= diasPorMes[mes];
+            }
+            return false;
+        }
+    
+        private boolean isBissexto(int ano) {
+            return (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0));
+        }
+    }
+    
+    //
+    public class Main {
+        public static void main(String[] args) {
+            Data data1 = new Data(15, 6, 2023);
+            Data data2 = new Data(20, 6, 2023);
+    
+            System.out.println("Data 1: Dia " + data1.getDia() + ", Mês " + data1.getMes() + ", Ano " + data1.getAno());
+            System.out.println("Mês de Data 1 por extenso: " + data1.getMesExtenso());
+            System.out.println("É ano bissexto? " + data1.isBissexto());
+    
+            int comparacao = data1.compara(data2);
+            if (comparacao == 0) {
+                System.out.println("As datas são iguais.");
+            } else if (comparacao < 0) {
+                System.out.println("Data 1 é menor que Data 2.");
+            } else {
+                System.out.println("Data 1 é maior que Data 2.");
+            }
+    
+            Data cloneData = data1.clone();
+            System.out.println("Clone da Data 1: Dia " + cloneData.getDia() + ", Mês " + cloneData.getMes() + ", Ano " + cloneData.getAno());
+        }
+    }
+    
+    //Esse código exemplifica o uso da classe Data e seus métodos para manipular datas. Certifique-se de que o código atenda aos requisitos específicos do seu sistema e faça as adaptações necessárias.
+    ```
+    
+- 9. Escreva uma classe em que cada objeto representa um Voo que acontece em determinada data e em
+determinado horário. Cada vôo possui no máximo 100 passageiros, e a classe permite controlar a ocupação das vagas. A classe deve ter os seguintes métodos:
+a. Construtor: configura os dados do vôo (recebidos como parâmetro): número do vôo, data (para
+armazenar a data utilize um objeto da classe Data, criada na questão anterior);
+b. ProximoLivre: retorna o número da próxima cadeira livre
+c. Verifica: verifica se o número da cadeira recebido como parâmetro está ocupada
+d. Ocupa: ocupa determinada cadeira do vôo, cujo número é recebido como parâmetro, e retorna
+verdadeiro se a cadeira ainda não estiver ocupada (operação foi bem sucedida) e falso caso
+contrário
+e. Vagas: retorna o número de cadeiras vagas disponíveis (não ocupadas) no vôo
+f. GetVoo: retorna o número do vôO
+    
+    ```java
+    package Exercecios;
+    /**
+     *
+     * @author Sales
+     */
+    import java.text.ParseException;
+    import java.text.SimpleDateFormat;
+    import java.util.Date;
+    
+    public class Extra {
+    
+        private int codVoo; 
+        private Date data;
+        private boolean[] cadeiras;
+    
+      public Extra(int codVoo) {
+                this.codVoo = codVoo;
+                this.data = data;
+                this.cadeiras = new boolean[100];} // Inicialmente, todas as cadeiras estão desocupadas.
+    
+           
+      
+                                    // Metodo 1 para indicar a próxima cadeira diponivel 
+                                                    public int proximoLivre() {
+                                                        for (int i = 0; i < cadeiras.length; i++) {
+                                                            if (!cadeiras[i]) {
+                                                                return i + 1;
+                                                            }
+                                                        }
+                                                        return 0;
+                                                    }
+    
+        
+                                    // Método 2 Verifica: verifica se o número da cadeira recebido como parâmetro está ocupada
+                                                    
+                                                    public boolean verifica(int numeroCadeira){
+                                                        if (!cadeiras[numeroCadeira]){
+                                                            return true;
+                                                        } else {
+                                                            return false; 
+                                                        }
+                                                    }                                                                             
+                                               
+                                              
+                                        // Método 3 ocupar uma cadeira
+                                        
+                                             /* public boolean ocuparCadeira(int ocupar){     
+                                              int numeroLivre = proximoLivre();
+                                              this.cadeiras[numeroLivre] = cadeiras[numeroLivre];
+                                              return true;*/
+                                                    
+                                                    
+                                                    public boolean ocuparCadeira(int numeroCadeira) {
+                                                if (verifica(numeroCadeira)) { // Verifica se a cadeira está vazia
+                                                    this.cadeiras[numeroCadeira - 1] = true; // Marca a cadeira como ocupada
+                                                    return true;
+                                                }
+                                                return false; // A cadeira já está ocupada
+                                            }
+    
+                                              
+    
+                                               
+                                          //metodo 4 e. Vagas: retorna o número de cadeiras vagas disponíveis (não ocupadas) no vôo
+                                               public int retornarNcadeirasVazias(){  // void 
+                                                int contadorOcupadas = 0;                         //contador
+                                                int contadorVazias = 0;                           //contador
+                                                    for (int i = 0; i < cadeiras.length; i++){  //for 
+                                                     if (!cadeiras[i]){                        //if para saber se tem algo dentro da variavel cadeira
+                                                         contadorVazias += 1;                  //Se tiver: +1
+                                                     }else{                                   //else para saber o numero de cadeira ocupadas
+                                                         contadorOcupadas += 1;}
+                                                   } 
+                                                    return contadorOcupadas;} 
+                                                                                            
+                                                    
+                                                
+      
+      
+      
+      // get e set
+    public int getCodVoo() {
+            return codVoo;
+        }
+    
+        public void setCodVoo(int codVoo) {
+            this.codVoo = codVoo;
+        }
+    
+        public Date getData() {
+            return data;
+        }
+    
+        public void setData(Date data) {
+            this.data = data;
+        }
+    
+        public boolean[] getCadeiras() {
+            return cadeiras;
+        }
+    
+        public void setCadeiras(boolean[] cadeiras) {
+            this.cadeiras = cadeiras;
+        }
+     
+    }
+    
+    ///
+    
+    System.out.println("a próxima cadeira livre é a: " + voos.proximoLivre());
+                
+                System.out.println(" ");
+                
+               
+                
+                System.out.println("");
+                //System.out.println("testecadiras" + voos.getCadeira);
+                //teste 3 3 ocupar uma cadeira
+               voos.ocuparCadeira(1);
+               System.out.println(voos.ocuparCadeira(0));
+               
+               
+               System.out.println("");
+               
+                //Teste dois verifica se a cadeira está ocupada
+                voos.verifica(1);
+                System.out.println(voos.verifica(0));
+                
+                // teste 3
+                voos.retornarNcadeirasVazias();
+                System.out.println(voos.retornarNcadeirasVazias());
+            }
+        }
+    ```
+    
+- 10.Crie uma classe chamada Ingresso, que possui um valor em reais e um mé
+todo imprimirValor. Crie uma
+classe IngressoVIP, que herda de Ingresso e possui um valor adicional. Crie um mé
+todo que retorne o
+valor do ingresso VIP (com o adicional incluído). Crie um programa para criar as instâncias de Ingresso e
+IngressoVIP, mostrando a diferença de preços.
+    
+    1 - Crie uma classe chamada Ingresso que possui um valor em reais e um método imprimir Valor.
+    2 - Crie umaclasse Ingresso VIP, que herda de Ingresso e possui um valor adicional.
+    3 - Crie um método que retorne o valor do ingresso VIP (com o adicional incluído).
+    4- Crie um programa para criar as instâncias de Ingresso e Ingresso VIP, mostrando a diferença de preços.
+    
+    ```java
+    import java.text.ParseException;
+    import java.text.SimpleDateFormat;
+    import java.util.Date;
+    
+    public class Extra{
+    
+        private String nome; 
+        private String posicao;
+        //private float valortotalingresso;
+        private Date dataNascimento; 
+        private String nacionalidade;
+        private float altura; 
+        private float peso;
+        ingresso parateste = new ingresso();
+    
+      public Extra() {
+     
+                this.nome = nome;
+                this.posicao = posicao;
+                this.dataNascimento = dataNascimento;
+                this.nacionalidade = nacionalidade;
+                this.altura = altura;
+                this.peso = peso;}
+       
+                                                    // Metodo 1
+                                                        public float CalculoCOMdesconto(float valorIngresso){
+                                                          float valortotalingresso = valorIngresso + parateste.getValorAdicional();
+                                                        return valortotalingresso;}
+      // get e set
+    
+        public String getNome() {
+            return nome;
+        }
+    
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+    
+        public String getPosicao() {
+            return posicao;
+        }
+    
+        public void setPosicao(String posicao) {
+            this.posicao = posicao;
+        }
+    
+        public Date getDataNascimento() {
+            return dataNascimento;
+        }
+    
+        public void setDataNascimento(Date dataNascimento) {
+            this.dataNascimento = dataNascimento;
+        }
+    
+        public String getNacionalidade() {
+            return nacionalidade;
+        }
+    
+        public void setNacionalidade(String nacionalidade) {
+            this.nacionalidade = nacionalidade;
+        }
+    
+        public float getAltura() {
+            return altura;
+        }
+    
+        public void setAltura(float altura) {
+            this.altura = altura;
+        }
+    
+        public float getPeso() {
+            return peso;
+        }
+    
+        public void setPeso(float peso) {
+            this.peso = peso;
+        }
+    
+     
+    }
+    
+    // ingresso:
+    
+    public class ingresso extends Ingressovip{
+        
+                                private float valor ;
+                                private String tipo;
+            
+    
+            public ingresso(){
+                 super();
+                
+                                this.valor = valor;
+                                this.tipo = tipo;}
+    
+        
+    
+                                                
+                                            public float mostrarValorDOingresso(){  
+                                               return getValor();
+                                            }
+                                            
+       
+                                            
+         public float getValor() {
+            return valor;
+        }
+    
+        public void setValor(float valor) {
+            this.valor = valor;
+        }
+    
+        public String getTipo() {
+            return tipo;
+        }
+    
+        public void setTipo(String tipo) {
+            this.tipo = tipo;
+        }
+    }
+    
+    //extensão ingresso vip
+    
+    	public class Ingressovip {
+          private float valorAdicional = 588.00f;
+    
+                       
+          public Ingressovip(){
+                                         this.valorAdicional = valorAdicional;}
+                   
+    
+                       
+        public float getValorAdicional() {
+            return valorAdicional;
+        }
+    
+        public void setValorAdicional(float valorAdicional) {
+            this.valorAdicional = valorAdicional;
+        }
+        
+    }
+    
+    //class main
+    
+    public class Ingressovip {
+          private float valorAdicional = 588.00f;
+    
+                       
+          public Ingressovip(){
+                                         this.valorAdicional = valorAdicional;}
+                   
+    
+                       
+        public float getValorAdicional() {
+            return valorAdicional;
+        }
+    
+        public void setValorAdicional(float valorAdicional) {
+            this.valorAdicional = valorAdicional;
+        }
+        
+    }
+    ```
+    
+- Crie uma classe para representar um jogador de futebol, com os atributos:
+a. nome;
+Curso de Lógica para Programação III
+Instrutor: Marcio Michelluzzi
+b. posição;
+c. data de nascimento;
+d. nacionalidade;
+e. altura;
+f. peso;
+Crie os métodos públicos necessários para getters e setters e também um método para imprimir todos os
+dados do jogador. Crie um método para calcular a idade do jogador e outro método para mostrar quanto
+tempo falta para o jogador se aposentar. Para isso, considere que os jogadores da posição de defesa se
+aposentam em média aos 40 anos, os jogadores de meio-campo aos 38 e os atacantes aos 35
+    
+    ```java
+    */
+    import java.text.ParseException;
+    import java.text.SimpleDateFormat;
+    import java.util.Date;
+    
+    public class Extra{
+    
+        private String nome ; 
+        private String posicao ;
+        private Date dataNascimento; 
+        private String nacionalidade;
+        private float altura; 
+        private float peso;
+        
+    
+      public Extra() {
+      
+         
+                this.nome = nome;
+                this.posicao = posicao;
+                this.dataNascimento = dataNascimento;
+                this.nacionalidade = nacionalidade;
+                this.altura = altura;
+                this.peso = peso ;}
+    
+                                                    // Metodo 1
+                                                       public void ImprimirDados(){
+                                                        System.out.println(getNome());
+                                                        System.out.println(getPosicao());
+                                                        System.out.println(getDataNascimento());
+                                                        System.out.println(getNacionalidade());       
+                                                        System.out.println(getAltura());
+                                                        System.out.println(getPeso());
+                                                       }
+      
+      
+                                                     // Método 2
+                                                     /*public void EntradaDados(String setNome,String setPosicao,Date setDataNascimento,String setNacionalidade,float setAltura,float setPeso){
+                                                        this.nome = setNome;
+                                                        this.posicao = setPosicao;
+                                                        this.dataNascimento = setDataNascimento;
+                                                        this.nacionalidade = setNacionalidade;       
+                                                        this.altura = setAltura;
+                                                        this.peso = setPeso;
+                                                       }*/
+                                                                                         
+                                            
+                                                      // Método 3
+                                        
+    
+                                               
+                                                     //metodo 4
+    
+      
+      // get e set
+    
+        public String getNome() {
+            return nome;
+        }
+    
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+    
+        public String getPosicao() {
+            return posicao;
+        }
+    
+        public void setPosicao(String posicao) {
+            this.posicao = posicao;
+        }
+    
+        public Date getDataNascimento() {
+            return dataNascimento;
+        }
+    
+        public void setDataNascimento(Date dataNascimento) {
+            this.dataNascimento = dataNascimento;
+        }
+    
+        public String getNacionalidade() {
+            return nacionalidade;
+        }
+    
+        public void setNacionalidade(String nacionalidade) {
+            this.nacionalidade = nacionalidade;
+        }
+    
+        public float getAltura() {
+            return altura;
+        }
+    
+        public void setAltura(float altura) {
+            this.altura = altura;
+        }
+    
+        public float getPeso() {
+            return peso;
+        }
+    
+        public void setPeso(float peso) {
+            this.peso = peso;
+        }
+    
+     
+    }
+    
+    ///main
+    
+    */
+    import java.text.ParseException;
+    import java.text.SimpleDateFormat;
+    import java.util.Date;
+    
+    public class Extra{
+    
+        private String nome ; 
+        private String posicao ;
+        private Date dataNascimento; 
+        private String nacionalidade;
+        private float altura; 
+        private float peso;
+        
+    
+      public Extra() {
+      
+         
+                this.nome = nome;
+                this.posicao = posicao;
+                this.dataNascimento = dataNascimento;
+                this.nacionalidade = nacionalidade;
+                this.altura = altura;
+                this.peso = peso ;}
+    
+                                                    // Metodo 1
+                                                       public void ImprimirDados(){
+                                                        System.out.println(getNome());
+                                                        System.out.println(getPosicao());
+                                                        System.out.println(getDataNascimento());
+                                                        System.out.println(getNacionalidade());       
+                                                        System.out.println(getAltura());
+                                                        System.out.println(getPeso());
+                                                       }
+      
+      
+                                                     // Método 2
+    																										Date dataHoje = new Date(); // Substitua pelo seu objeto Date
+                                                      Calendar calendar = Calendar.getInstance();
+                                                      calendar.setTime(dataHoje, getDataNascimento());
+                                                      int ano = calendar.get(Calendar.YEAR);
+                                                      System.out.println(ano);
+                                                      
+                                                      calendar.setTime(getDataNascimento());
+                                                      int anoNascimento = calendar.get(Calendar.YEAR);
+                                                      System.out.println(anoNascimento);
+                                                      
+                                                      
+                                                      int data = anoNascimento - ano;
+                                                      return data;                
+                                            
+                                                      // Método 3
+                                        
+    
+                                               
+                                                     //metodo 4
+    
+      
+      // get e set
+    
+        public String getNome() {
+            return nome;
+        }
+    
+        public void setNome(String nome) {
+            this.nome = nome;
+        }
+    
+        public String getPosicao() {
+            return posicao;
+        }
+    
+        public void setPosicao(String posicao) {
+            this.posicao = posicao;
+        }
+    
+        public Date getDataNascimento() {
+            return dataNascimento;
+        }
+    
+        public void setDataNascimento(Date dataNascimento) {
+            this.dataNascimento = dataNascimento;
+        }
+    
+        public String getNacionalidade() {
+            return nacionalidade;
+        }
+    
+        public void setNacionalidade(String nacionalidade) {
+            this.nacionalidade = nacionalidade;
+        }
+    
+        public float getAltura() {
+            return altura;
+        }
+    
+        public void setAltura(float altura) {
+            this.altura = altura;
+        }
+    
+        public float getPeso() {
+            return peso;
+        }
+    
+        public void setPeso(float peso) {
+            this.peso = peso;
+        }
+    
+     
+    }
+    ```
+    
+- 12. Crie uma classe Agenda que pode armazenar 10 pessoas e que seja capaz de realizar as seguintes
+operações:
+a. void armazenarPessoa(String nome, int idade, float altura); //armazena a pessoa em um array
+b. void removerPessoa(String nome); //remove a pessoa do array
+c. int buscarPessoa(String nome); // informa em que posição da agenda está a pessoa
+d. void imprimirAgenda(); // imprime os dados de todas as pessoas da agenda
+e. void imprimirPessoa(int index); // imprime os dados da pessoa que está na posição “i” da agenda.
+    
+    ```java
+    package AtividadePOO;
+    
+    import java.util.ArrayList;
+    import java.util.List;
+    import java.util.Scanner;
+    
+    public class pessoa {
+        private String nome;
+        private int idade;
+        private float altura;
+        List<String> lista = new ArrayList<String>();
+        Scanner leitor = new Scanner(System.in);      
+                
+                
+        public pessoa() {
+            this.nome = nome;
+            this.idade = idade;
+            this.altura = altura;
+        }
+                                               //1
+                                               public boolean armazenarPessoa(){
+                                               for(int n = 0; n <10; n++){
+                                               lista.add(leitor.next());
+                                               System.out.println("O nome foi adicionado com sucesso: " + lista.size());}
+                                               return true;  }
+                                               
+                                               //2
+                                               public boolean RemoverPessoa(){
+                                               lista.remove(0);
+                                               System.out.println("O nome foi removido com sucesso: " + lista.get(0));
+                                               return true;}
+                                               
+                                               //3
+                                               public boolean ProcurarPosição(String procurar){
+                                                   int procurarNomeProcurado = lista.indexOf(procurar);
+                                               System.out.println("O nome está na posição: " + procurarNomeProcurado);
+                                               return true;}
+                                               
+                                               //4 d. void imprimirAgenda(); // imprime os dados de todas as pessoas da agenda
+                                               public boolean mostarAgenda(){
+                                               lista.toString();
+                                               return true;}
+        
+        
+          public String getNome() {
+            return nome;
+        }
+    
+        public int getIdade() {
+            return idade;
+        }
+    
+        public float getAltura() {
+            return altura;
+        }
+        
+        public String toString() {
+        return "Nome: " + nome + ", Idade: " + idade + ", Altura: " + altura;}
+    ```
+    
+- 13. Crie uma classe Calculadora. Esta classe deve implementar as operações básicas (soma, subtração, divisão
+e multiplicação). Utilizando o conceito de herança crie uma classe chamada calculadora cientifica que
+implementa os seguintes cálculos: raizQuadrada e a potencia. Dica utilize a classe Math do pacote
+java.lang.
+    
+    ```java
+    public static void main(String[] args) {
+       Scanner leitor = new Scanner(System.in);
+       pessoa P = new pessoa();
+       
+        float numbA = leitor.nextFloat();
+        String sinal = leitor.next();
+        float numbB = leitor.nextFloat();
+        
+        P.calcular(numbA, sinal , numbB);
+       
+      // P.armazenarPessoa("mateus");,
+    
+    //classe
+    
+    public class pessoa {
+        private String sinal;
+    
+        Scanner leitor = new Scanner(System.in);      
+                
+    
+        public pessoa() {
+            this.sinal = sinal;
+    
+        }
+        
+        
+                                               //1
+                                               public void calcular(float numbA,String sinal,  float numbB){
+                                                   if(sinal.equals("+")){
+                                                  float resultado = numbA + numbB;
+                                                  System.out.println(resultado);
+                                                   }else{ System.out.println("erro");
+                                               }}
+    ```
+    
+- 14. Crie uma classe em Java chamada Fatura para uma loja de suprimentos de informática. A classe deve
+conter quatro atributos:
+a. número (String);
+b. descrição (String);
+c. quantidade comprada de um item (int);
+d. preço por item (double).
+A classe deve ter um construtor e os métodos getters e setters. Além disso, forneça um método chamado
+getTotalFatura que calcula o valor da fatura e depois retorna o valor como um double. Se o valor não for positivo, ele deve ser alterado para 0. Se o preço por item não for positivo, ele deve ser alterado para 0.
+Escreva uma nova classe chamada FaturaTeste (que contenha o método main) que demonstre as capacidades da classe Fatura.
+- 15. Crie uma classe chamada Funcionário que inclui três atributos:
+a. nome (String);
+b. sobrenome (String);
+c. salário mensal (double).
+A classe deve ter um construtor, métodos getters e setters para cada atributo da classe. Escreva uma classe chamada FuncionarioTeste (que contenha o método main) que cria dois objetos da classe Funcionario e
+exibe o salário de cada objeto. Então dê a cada Funcionario um aumento de 10% e exiba novamente o salário anual de cada um deles. Introduza na classe Funcionário uma variável de classe capaz de
+contabilizar o numero de funcionários que passaram pela empresa até a data.
+    
+    
+- 17. O agendamento de compromissos é uma das tarefas mais comuns para profissionais. Um sistema com essa
+finalidade deve ser capaz de gerenciar compromissos, atribuindo a cada um o seu tipo (reunião, pagamento,
+entrega de projeto); data; nome do participante ( pessoa, empresa etc) alguém com quem acontecerá é o
+compromisso) e seu telefone. Desenvolva um sistema que seja capaz de fazer operações básicas como
+agendar, remover e alterar compromissos e exibir compromissos por participante e por data
+- 16. Construa uma classe para representar um carro. O tanque de combustível do carro armazena no máximo 50
+litros de gasolina. O carro consome 15 km/litro. Deve ser possível:
+a. Abastecer o carro com certa quantidade de gasolina;
+b. Mover o carro em uma determinada distância (medida em km);
+c. Retornar a quantidade de combustível e a distância total percorrida.
+No programa principal, crie 2 carros. Abasteça 20 litros no primeiro e 30 litros no segundo. Desloque o
+primeiro em 200 km e o segundo em 400 km. Exiba na tela a distância percorrida e o total de combustível
+restante para cada um.
