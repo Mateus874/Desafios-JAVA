@@ -1350,34 +1350,4 @@ java.lang.
                                                }}
     ```
     
-- 14. Crie uma classe em Java chamada Fatura para uma loja de suprimentos de informática. A classe deve
-conter quatro atributos:
-a. número (String);
-b. descrição (String);
-c. quantidade comprada de um item (int);
-d. preço por item (double).
-A classe deve ter um construtor e os métodos getters e setters. Além disso, forneça um método chamado
-getTotalFatura que calcula o valor da fatura e depois retorna o valor como um double. Se o valor não for positivo, ele deve ser alterado para 0. Se o preço por item não for positivo, ele deve ser alterado para 0.
-Escreva uma nova classe chamada FaturaTeste (que contenha o método main) que demonstre as capacidades da classe Fatura.
-- 15. Crie uma classe chamada Funcionário que inclui três atributos:
-a. nome (String);
-b. sobrenome (String);
-c. salário mensal (double).
-A classe deve ter um construtor, métodos getters e setters para cada atributo da classe. Escreva uma classe chamada FuncionarioTeste (que contenha o método main) que cria dois objetos da classe Funcionario e
-exibe o salário de cada objeto. Então dê a cada Funcionario um aumento de 10% e exiba novamente o salário anual de cada um deles. Introduza na classe Funcionário uma variável de classe capaz de
-contabilizar o numero de funcionários que passaram pela empresa até a data.
-    
-    
-- 17. O agendamento de compromissos é uma das tarefas mais comuns para profissionais. Um sistema com essa
-finalidade deve ser capaz de gerenciar compromissos, atribuindo a cada um o seu tipo (reunião, pagamento,
-entrega de projeto); data; nome do participante ( pessoa, empresa etc) alguém com quem acontecerá é o
-compromisso) e seu telefone. Desenvolva um sistema que seja capaz de fazer operações básicas como
-agendar, remover e alterar compromissos e exibir compromissos por participante e por data
-- 16. Construa uma classe para representar um carro. O tanque de combustível do carro armazena no máximo 50
-litros de gasolina. O carro consome 15 km/litro. Deve ser possível:
-a. Abastecer o carro com certa quantidade de gasolina;
-b. Mover o carro em uma determinada distância (medida em km);
-c. Retornar a quantidade de combustível e a distância total percorrida.
-No programa principal, crie 2 carros. Abasteça 20 litros no primeiro e 30 litros no segundo. Desloque o
-primeiro em 200 km e o segundo em 400 km. Exiba na tela a distância percorrida e o total de combustível
-restante para cada um.
+
