@@ -1,0 +1,1071 @@
+Curso de Lógica para Programação III
+Instrutor: Marcio Michelluzzi
+Lista de exercícios I
+
+[Lógica para Programação III - JAVA.pdf](https://prod-files-secure.s3.us-west-2.amazonaws.com/4a98dc58-0109-4426-940e-3c0675f6bd84/1a14411a-9d84-41f4-ae2f-3266dbe6929f/Lgica_para_Programao_III_-_JAVA.pdf)
+
+- 1 - Faça um algoritmo que receba dois números e exiba o resultado da sua soma;
+    
+    ```java
+    public static void main(String[] args) {  
+            int numero1;
+            int numero2;
+            Scanner leitorScanner = new Scanner(System.in);
+            numero1 = leitorScanner.nextInt();
+            numero2 = leitorScanner.nextInt();
+            int soma = numero1 + numero2; 
+            System.out.println(soma);
+            } 
+    }
+    ```
+    
+- 2 - Faça um algoritmo que receba dois números e ao final mostre a soma, subtração, multiplicação e a divisão
+dos dois números lidos;
+    
+    ```java
+    numero1 = leitorScanner.nextInt();
+            numero2 = leitorScanner.nextInt();
+            
+            int soma = numero1 + numero2;
+            int subtração = numero1 - numero2;
+            int multiplicacao = numero1 * numero2;
+            int divisao = numero1 / numero2;
+            
+            System.out.println(soma);
+            System.out.println(subtração);
+            System.out.println(multiplicacao);
+            System.out.println(divisao);
+    ```
+    
+- 3 - Escreva um algoritmo para determinar o consumo médio de um automóvel sendo fornecida a distância total percorrida pelo automóvel e o total de combustível gasto;
+    
+    ```java
+    public static void main(String[] args) {  
+            float distânciaTotal;
+            float combustívelGasto;
+            Scanner leitorScanner = new Scanner(System.in);
+            distânciaTotal = leitorScanner.nextInt();
+            combustívelGasto = leitorScanner.nextInt();
+            float divisao = distânciaTotal / combustívelGasto;
+            System.out.println(divisao);
+    ```
+    
+- 4 - Escreva um algoritmo que leia o nome de um vendedor, o seu salário fixo e o total de vendas efetuadas
+por ele no mês (em dinheiro). Sabendo que este vendedor ganha 15% de comissão sobre suas vendas
+efetuadas, informar o seu nome, o salário fixo e salário no final do mês;
+    
+    ```java
+    public static void main(String[] args) {  
+            Scanner leitorScanner = new Scanner(System.in);
+            
+            System.out.print("Nome do funcionário: ");
+            String nomeFun = leitorScanner.next();
+            float vendasEfetuadas = leitorScanner.nextFloat();
+            float porcentagemComissao = leitorScanner.nextFloat();
+            float valorTotal = (vendasEfetuadas * porcentagemComissao)/100;
+            System.out.println("O funcionï¿½rio" + nomeFun+  "vendeu: "+ vendasEfetuadas+ "e lucrou cerca de: "+ valorTotal);
+            } 
+    }
+    ```
+    
+- 5 - Escreva um algoritmo que leia o nome de um aluno e as notas das três provas que ele obteve no semestre.
+No final informar o nome do aluno e a sua média (aritmética);
+    
+    ```java
+    Scanner leitorScanner = new Scanner(System.in);
+            
+            System.out.print("Nome do aluno: ");
+            String nomeFun = leitorScanner.next();
+            
+            System.out.print("prova 1: ");
+            float prova1 = leitorScanner.nextFloat();
+            
+            System.out.print("prova 2: ");
+            float prova2 = leitorScanner.nextFloat();
+            
+             System.out.print("prova 3: ");
+            float prova3 = leitorScanner.nextFloat();
+            
+            
+            
+            float mediadoAluno = (prova1 + prova2 + prova3)/3;
+            System.out.println("A média foi: " + mediadoAluno);
+    ```
+    
+- 6 - Leia dois valores para as variáveis A e B, e efetuar as trocas dos valores de forma que a variável A passe a
+possuir o valor da variável B e a variável B passe a possuir o valor da variável A. Apresentar os valores
+trocados;
+    
+    ```java
+    System.out.print("Valor A: ");
+            float valorA = leitorScanner.nextFloat();
+            
+             System.out.print("Valor B: ");
+            float valorB = leitorScanner.nextFloat();
+            
+            float valorC = valorA;
+            valorA = valorB;
+            valorB = valorC;
+            System.out.println("O valor de A é: " + valorA + "e B tem o valor de: " + valorB);
+            }
+    ```
+    
+- 7 - Leia uma temperatura em graus Celsius e apresentá-la convertida em graus Fahrenheit. A fórmula de
+conversão é :F=(9*C+160) / 5, sendo F a temperatura em Fahrenheit e C a temperatura em Celsius;
+    
+    ```java
+    public static void main(String[] args) {  
+            Scanner leitorScanner = new Scanner(System.in);
+           
+            System.out.print("Qual a temperatura em Celsius?: ");
+            float tempcelsius = leitorScanner.nextFloat();
+            
+            float tempfah = ((9*tempcelsius)+160)/5;
+            
+            System.out.println("O valor de A é: " + tempfah);
+            } 
+    }
+    ```
+    
+- 8 - Elabore um algoritmo que efetue a apresentação do valor da conversão em real (R$) de um valor lido em
+dólar (US$). O algoritmo deverá solicitar o valor da cotação do dólar e também a quantidade de dólares
+disponíveis com o usuário;
+    
+    ```java
+    public static void main(String[] args) {  
+            Scanner leitor = new Scanner(System.in);
+            
+            System.out.print("Qual a cotação do dolar?: ");
+            float cotacaodolarHOJE = leitor.nextFloat();
+            float valorReal = leitor.nextFloat();
+           
+            float conversaoReal = valorReal / cotacaodolarHOJE;
+            
+            System.out.print(conversaoReal);
+    
+            } 
+    }
+    ```
+    
+- 9 - Faça um algoritmo que receba um valor que foi depositado e exiba o valor com rendimento após um
+mês. Considere fixo o juro da poupança em 0,07% a. m;
+    
+    ```java
+    public static void main(String[] args) {  
+            Scanner leitor = new Scanner(System.in);
+            
+            System.out.print("Qual o valor do deposito?: ");
+            float deposito = leitor.nextFloat();
+            double jurosFixo = 0.07;
+           
+            double rendimento = (deposito * jurosFixo)/100;
+            double remdimento2 = rendimento + deposito;
+            
+            System.out.print(remdimento2);
+    
+            } 
+    }
+    ```
+    
+- 10 -A Loja Mamão com Açúcar está vendendo seus produtos em5(cinco)prestações sem juros. Faça um
+algoritmo que receba um valor de uma compra e mostre o valor das prestações;
+    
+    ```java
+    System.out.print("Qual o valor da compra?: ");
+            float compra = leitor.nextFloat();
+            System.out.print("Quantas parcelas?: ");
+            int parcelasN = leitor.nextFloat();
+            float prestacoes = compra / paracelasN;
+    
+            System.out.print(prestacoes);
+    ```
+    
+- 11 -Faça um algoritmo que receba o preço de custo de um produto e mostre o valor de venda. Sabe-se que o
+preço de custo receberá um acréscimo de acordo com um percentual informado pelo usuário;
+    
+    ```java
+    System.out.print("Qual o valor da compra?: ");
+            float preçoCusto = leitor.nextFloat();
+            System.out.print("Qual o %?: ");
+            float percentual = leitor.nextFloat();
+            float ValorF = preçoCusto * percentual;
+    
+            System.out.print(ValorF);
+    ```
+    
+- 12 - O custo de um carro novo ao consumidor é a soma do custo de fábrica mais o percentual do distribuidor e
+dos impostos aplicados (primeiro os impostos são aplicados sobre o custo de fábrica, e depois o percentual
+do distribuidor sobre o resultado). Supondo que o percentual do distribuidor seja de 28% e os impostos
+45%, escreva um algoritmo que leia o custo de fábrica de um carro e informe o custo ao consumidor do
+mesmo;
+    
+    ```java
+    System.out.print("Qual o valor do custo?: ");
+            float custo = leitor.nextFloat();
+            
+            double imposto = 0.45 ;
+            
+            double percentuaisDistri = 0.28;
+            
+            double ValorF = (custo * imposto)+(custo * percentuaisDistri);
+    
+            System.out.print("O valor final para o consumidor é de: " +ValorF);
+    
+            }
+    ```
+    
+- 13-Faça um algoritmo que receba um número e mostre uma mensagem caso este número seja maior que 10;
+    
+    ```java
+    System.out.print("Qual o N: ");
+            int N = leitor.nextInt();
+            
+            if (N > 10){
+            System.out.print("O valor é maior que dez");
+                }else{
+            System.out.print("Não é maior");}
+    ```
+    
+- Escreva um algoritmo que leia dois valores inteiro distintos e informe qual é o maior;
+    
+    ```java
+    System.out.print("Qual o N: ");
+            int N1 = leitor.nextInt();
+            int N2 = leitor.nextInt();
+            
+            if (N1 > N2){
+            System.out.print("O valor é maior que dez");
+                }else{
+    ```
+    
+- 14 - Faça um algoritmo que receba um número e diga se este número está no intervalo entre 100 e 200;
+    
+    ```java
+    package Exercicio15;
+    //import java.util.Scanner;
+    import java. util.Scanner;
+    public class App { 
+        public static void main(String[] args) {
+            
+            int numero;
+            Scanner leitorScanner = new Scanner(System.in);
+            numero = leitorScanner.nextInt();
+            if (numero >= 100 && numero <= 200){
+                System.out.println("Esse número está dentro da margem");
+            
+            } else {
+                   System.out.println("Esse número não pertece a margem, tente outro");   
+            } 
+        }
+    }
+    ```
+    
+- 15-Escreva um algoritmo que leia o nome e as três notas obtidas por um aluno durante o semestre. Calcular a
+sua média (aritmética), informar o nome e sua menção aprovado (media >= 7), Reprovado (media <= 5) e
+Recuperação (media entre 5.1 a 6.9);
+    
+    ```java
+    System.out.print("Qual a nota 1: ");
+            float nota1 = leitor.nextFloat();
+            System.out.print("Qual a nota 2: ");
+            float nota2 = leitor.nextFloat();
+            System.out.print("Qual a nota 3: ");
+            float nota3 = leitor.nextFloat();
+            
+            float media = (nota1 + nota2 + nota3)/3;
+            
+            if (media >= 7){
+            System.out.print("aprovado");}
+                else if (media>=5.1 && media <=6.9){
+                    System.out.print("recuperação");}
+            else{
+            System.out.print("reprovado");}
+    ```
+    
+- 16-Leia 80 números e ao final informar quantos número(s) est(á)ão no intervalo entre 10 (inclusive) e 150
+(inclusive);
+    
+    ```java
+    float entre;
+            float ler;
+            Scanner leitor = new Scanner(System.in);
+            
+            int i = 0;
+            
+            for (; i < 80; i++){ 
+            
+                System.out.println("Informe um número");
+                ler = leitor.nextInt();
+                
+                    
+                          
+        }           entre = (10 - 150);
+                    System.out.println("foi lido os 80 número, e o resultado é :" + entre);
+            }
+      
+        }
+    ```
+    
+- 17-Faça um algoritmo que receba a idade de 75 pessoas e mostre mensagem informando “maior de idade” e
+“menor de idade” para cada pessoa. Considere a idade a partir de 18 anos como maior de idade;
+    
+    ```java
+    try (Scanner leitor = new Scanner(System.in)) {
+                int opcao = 1;
+                
+                while(opcao == 1){
+                    
+                    int i = 0;
+                    for (; 3 >= i; i++){
+                        
+                        System.out.println("Informe sua idade");
+                        idade = leitor.nextInt();
+                        
+                        if (idade > 18){
+                            System.out.println("maior de idade");
+                            
+                        } else{
+                            System.out.print("menor de idade");}
+                    }
+                    System.out.println("Digite 1 para sair: ");
+                    opcao = leitor.nextInt();
+                }   }        
+            }
+    ```
+    
+- 18-Escreva um algoritmo que leia o nome e o sexo de 56 pessoas e informe o nome e se ela é homem ou
+mulher. No final informe total de homens e de mulheres;
+    
+    ```java
+    Scanner leitor = new Scanner(System.in);
+                char sexo;
+                String nome;
+    
+                int opcao = 1;
+                
+                 while (opcao == 1) {
+                    
+                    for (int i = 0; i < 3; i++){
+                        
+                        System.out.println("Informe seu nome: ");
+                        nome = leitor.next();
+                        
+                        System.out.println("Qual o sexto? Digite M ou F: ");
+                        sexo = leitor.next().charAt(0);
+                        
+                            if (sexo == 'M'){
+                            System.out.println("Maculino");
+                            
+                                } else{
+                                System.out.println("Feminino");}
+                    }
+                System.out.println("Digite 1 para continuar ou qualquer outro número para sair: ");
+                opcao = leitor.nextInt();
+    }
+                         leitor.close();
+    
+    } 
+    }
+    ```
+    
+- A concessionária de veículos "CARANGO VELHO" está vendendo seus veículos com desconto. Faça um algoritmo que calcule e exiba o valor do desconto e o valor a ser pago pelo cliente para vários carros. O desconto será calculado de acordo com o ano do veículo: até 2000 - 12% e acima de 2000 - 7%. O sistema perguntará se deseja continuar calculando desconto até que a resposta seja: "(N) Não". Informe o total de carros com ano até 2000 e o total geral.
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4a98dc58-0109-4426-940e-3c0675f6bd84/40ed9e82-b674-43cc-be5e-d046513f7c99/Untitled.png)
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/4a98dc58-0109-4426-940e-3c0675f6bd84/ea727d4e-f16e-42ba-96ea-5782913ab8ad/Untitled.png)
+    
+    ```java
+    mport java. util.Scanner;
+    public class App { 
+        
+        public static void main(String[] args) { 
+       
+            Scanner leitor = new Scanner(System.in);
+            
+            String opcaoSaida = "Sim";
+            float valorVeiculo;
+            int anoCarro;
+            int carrosAte2000 = (int) 0;
+            float totalGeral = 0.0f;
+                    
+            
+                    while("Sim".equals(opcaoSaida)){
+                        
+                        System.out.println("Qual o valor do veiculo?: ");
+                        valorVeiculo = leitor.nextFloat();
+                        
+                        System.out.println("Qual o ano do veiculo??: ");
+                        anoCarro = leitor.nextInt();
+                        
+                              if (anoCarro > 2000){
+                                  System.out.println("Você pagará uma taxa, de 7%, ou seja: " + (valorVeiculo*0.07));
+                              } else{
+                                  System.out.println("Você pagará uma taxa, de 12%, ou seja: " + (valorVeiculo*0.12));
+                              }
+                              if (anoCarro > 2000 ){  
+                              carrosAte2000 = carrosAte2000 + 1;
+                              }else{}
+                              
+                              totalGeral = totalGeral + valorVeiculo;
+                                      
+    
+                    System.out.println("Digite sim se você deseja continuar, e Não para sair");
+                    opcaoSaida = leitor.next();
+    }
+                    System.out.println("total de vendas e números de veiculos acima de 2000 é: " + carrosAte2000+ "E"+ totalGeral );
+                    
+    }
+    }
+    ```
+    
+- 20-Escreva um algoritmo que leia os dados de “N” pessoas (nome, sexo, idade e saúde) e informe se está apta
+ou não para cumprir o serviço militar obrigatório. Informe os totais;
+    
+    ```java
+    import java. util.Scanner;
+    public class App { 
+        
+        public static void main(String[] args) { 
+       
+            Scanner leitor = new Scanner(System.in);
+            
+            String nome = "Sim";
+            String sexo = "M";
+            int idade;
+            int saude;
+            String opcaoSaida = "Sim";
+     
+                    
+            
+                    while("Sim".equals(opcaoSaida)){
+                        
+                        System.out.println("Qual o Nome?: ");
+                        nome = leitor.next();
+                        
+                        System.out.println("Qual o Sexo??: ");
+                        sexo = leitor.next();
+                        
+                        System.out.println("Qual a idade: ");
+                        idade = leitor.nextInt();
+                        
+                        System.out.println("Qual o seu nível de saude? em uma escala de 1 a 3: ");
+                        saude = leitor.nextInt();
+                        
+                         if ("M".equals(sexo) && idade >= 18 && saude == 3){
+                                   System.out.println("Aprovado");
+                                           } else {System.out.println("Reprovado");}
+    
+                    System.out.println("Digite sim se você deseja continuar, e Não para sair");
+                    opcaoSaida = leitor.next();
+    ```
+    
+- 21-Faça um algoritmo que receba o preço de custo e o preço de venda de 40 produtos. Mostre como resultado
+se houve lucro, prejuízo ou empate para cada produto. Informe o valor de custo de cada produto, o valor
+de venda de cada produto, a média de preço de custo e do preço de venda;
+    
+    ```java
+    import java. util.Scanner;
+    public class App { 
+        
+        public static void main(String[] args) { 
+            String nomeProduto;
+            float precoCusto;
+            float precoVenda;
+            
+            float TotalPrecoCusto = 0.0f;
+            float TotalPrecoVenda = 0.0f;
+            
+            Scanner leitor = new Scanner(System.in);
+            
+            int i = 0;
+            
+            for (; i < 2; i++){ 
+            
+                System.out.println("Qual o nome produto?");
+                nomeProduto = leitor.next();
+                
+                System.out.println("Qual o peço o custo?");
+                precoCusto = leitor.nextFloat();
+                
+                System.out.println("Qual o peço de venda?");
+                precoVenda = leitor.nextFloat();
+                
+                  if (precoCusto == precoVenda){
+                    System.out.println("Os preços são iguais!!!!!!");
+                 }  else { 
+                        if (precoCusto < precoVenda){
+                            System.out.println("O de venda é maior > ");
+                 } else{
+                            System.out.println("O preço de custo é maior");
+                        } 
+                         
+                         }
+                  TotalPrecoCusto = TotalPrecoCusto + precoCusto;
+                  TotalPrecoVenda = TotalPrecoVenda + precoVenda;
+                          
+                   System.out.println(nomeProduto + "preço de custo" + precoCusto + ", preço de venda: " + precoVenda);
+        }           
+                             System.out.println((TotalPrecoCusto) + (TotalPrecoVenda));
+    
+            }
+      
+        }
+    ```
+    
+- 22 -Faça um algoritmo que receba um número e mostre uma mensagem caso este número sege maior que 80,
+menor que 25 ou igual a 40;
+    
+    ```java
+    public static void main(String[] args) { 
+       
+            Scanner leitor = new Scanner(System.in);
+            
+            int N;
+            
+            String opcaoSaida = "Sim";
+    
+                    while("Sim".equals(opcaoSaida)){
+    
+                        System.out.println("Qual o número?: ");
+                        N = leitor.nextInt();
+                        
+                               if (N <= 80 && N >=25 && N == 40 ){
+                                   System.out.println("Dentro padrão");}
+                                  else{
+                                       System.out.println("número fora do padrão");}
+     
+                    System.out.println("Digite sim se você deseja continuar, e Não para sair");
+                    opcaoSaida = leitor.next();
+    }
+                
+    }
+    }
+    ```
+    
+- 23 -Faça um algoritmo que receba “N” números e mostre positivo, negativo ou zero para cada número;
+    
+    ```java
+    public static void main(String[] args) { 
+       
+            Scanner leitor = new Scanner(System.in);
+            
+            int N;
+            
+            String opcaoSaida = "Sim";
+    
+                    while("Sim".equals(opcaoSaida)){
+    
+                        System.out.println("Qual o número?: ");
+                        N = leitor.nextInt();
+                        
+                               if (N == 0){
+                                   System.out.println("zero");}
+                                  else{ if(N < 0){
+                                       System.out.println("negativo");} 
+                                    else{
+                                    System.out.println("positivo");}}
+                               
+                    System.out.println("Digite sim se você deseja continuar, e Não para sair");
+                    opcaoSaida = leitor.next();
+    }
+               
+    }
+    }
+    ```
+    
+- 24 - Faça um algoritmo que leia dois números e identifique se são iguais ou diferentes. Caso eles sejam iguais
+imprima uma mensagem dizendo que eles são iguais. Caso sejam diferentes, informe qual número é o
+maior, e uma mensagem que são diferentes;
+    
+    ```java
+    int N1;
+            int N2;
+            
+            String opcaoSaida = "Sim";
+    
+                    while("Sim".equals(opcaoSaida)){
+    
+                        System.out.println("Qual o número?: ");
+                        N1 = leitor.nextInt();
+                        
+                        System.out.println("Qual o número?: ");
+                        N2 = leitor.nextInt();
+                        
+                               if (N2 != N1){
+                                   System.out.println("DIFERENTE");}
+                              
+                         
+                                    else{
+                                    System.out.println("IGUAL");}
+                    
+                               
+                    System.out.println("Digite sim se você deseja continuar, e Não para sair");
+                    opcaoSaida = leitor.next();}
+        
+    }
+               
+    }
+    ```
+    
+- 25 -Faça um algoritmo que leia um número de 1 a 5 e escreva por extenso. Caso o usuário digite um número
+que não esteja neste intervalo, exibir a seguinte mensagem: número inválido;
+    
+    ```java
+    String opcaoSaida = "Sim";
+    
+            while ("Sim".equals(opcaoSaida)) {
+                for (int i = 0; i < 5; i++) {
+                    System.out.println("Qual o número?: ");
+                    N1 = leitor.nextInt();
+    
+                    if (N1 == 1) {
+                        System.out.println("Um");
+                    } else if (N1 == 2) {
+                        System.out.println("DOIS");
+                    } else if (N1 == 3) {
+                        System.out.println("TRÊS");
+                    } else if (N1 == 4) {
+                        System.out.println("QUARTA");
+                    } else {
+                        System.out.println("Número não reconhecido");
+                    }
+                }
+                System.out.println("Digite 'Sim' se você deseja continuar, e 'Não' para sair");
+                opcaoSaida = leitor.next();
+            }
+            leitor.close();
+        }
+    }
+    ```
+    
+- 26 -A concessionária de veículos “CARANGO” está vendendo os seus veículos com desconto. Faça um
+algoritmo que calcule e exiba o valor do desconto e o valor a ser pago pelo cliente. O desconto deverá ser
+calculado sobre o valor do veículo de acordo com o combustível (álcool – 25%, gasolina – 21% ou diesel
+–14%). Com valor do veículo zero encerra entrada de dados. Informe total de desconto e total pago pelos
+clientes;
+    
+    ```java
+    public static void main(String[] args) { 
+       
+            Scanner leitor = new Scanner(System.in);
+                String opcaoSaida = "Sim";
+                        
+                        
+                        while ("Sim".equals(opcaoSaida)) {
+                   
+                        
+                            for (int i = 0; i < 2; i++) {
+                                
+                            
+                            System.out.println("Qual o valor do carro??");
+                             float ValorCarro = leitor.nextFloat();
+                             
+                            System.out.println("As opções de marca?:  A, B ou C: ");
+                             String escolhaCarro = leitor.next();
+                             
+                        
+                            
+                                switch (escolhaCarro){
+                                case "A":
+                                    System.out.println("Carro a alcool");
+                                    break;
+                                case "B":
+                                    System.out.println("Carro a disel");
+                                    break;
+                                default:
+                                    System.out.println("Número fora do intervalo de 1 a 5");}
+                            
+                                    if ("A".equals(escolhaCarro)){ 
+                                        System.out.println("O valor do carro a alcool fica: " +(ValorCarro * 0.25));
+                                            }else{
+                                                 System.out.println("O valor do carro a gasolina – 21%: " +(ValorCarro * 0.21));}
+                            
+                             }
+                        
+                        System.out.println("Digite 'Sim' se você deseja continuar, e 'Não' para sair");
+                        opcaoSaida = leitor.next();
+                        }
+                }
+          
+        }
+    ```
+    
+- 27-Escreva um algoritmo para uma empresa que decide dar um reajuste a seus 584 funcionários de acordo
+com os seguintes critérios:
+a. 50% para aqueles que ganham menos do que três salários mínimos;
+b. 20% para aqueles que ganham entre três até dez salários mínimos;
+c. 15% para aqueles que ganham acima de dez até vinte salários mínimos;
+d. 10% para os demais funcionários.
+Curso de Lógica para Programação III
+Instrutor: Marcio Michelluzzi
+Leia o nome do funcionário, seu salário e o valor do salário mínimo. Calcule o seu novo salário
+reajustado. Escrever o nome do funcionário, o reajuste e seu novo salário. Calcule quanto à empresa
+vai aumentar sua folha de pagamento;
+    
+    ```java
+    import java. util.Scanner;
+    public class App { 
+        
+        public static void main(String[] args) { 
+             Scanner leitor = new Scanner(System.in); 
+           
+             String funcionario;
+             float salario;
+             float salarioMinimo = 1250;
+             char decisaoSair = 's';
+             float valortotal = 0;
+             
+             
+             while (decisaoSair == 's' || decisaoSair == 'S'){
+             
+                  for (int n = 0; n < 2; n++){   
+                     
+                    System.out.println("qual o nome do funcionario: ");
+                    funcionario = leitor.next();
+    
+                    System.out.println("qual o seu salario?: ");
+                    salario = leitor.nextFloat();
+    
+                    float numerosSalario = salarioMinimo / salario;
+                    
+                        if (numerosSalario < 3) {
+                            System.out.println("Parabéns, você vai receber um aumento de 50% no seu salário: " + (salario + (salario * 0.50)));
+                            valortotal += salario * 0.50;
+                        } else if (numerosSalario >= 3 && numerosSalario <= 10) {
+                            System.out.println("Parabéns, você vai receber um aumento de 20% no seu salário: " + (salario + (salario * 0.20)));
+                        } else if (numerosSalario > 10 && numerosSalario <= 20) {
+                            System.out.println("Parabéns, você vai receber um aumento de 15% no seu salário: " + (salario + (salario * 0.15)));
+                        } else if (numerosSalario > 20) {
+                            System.out.println("Parabéns, você vai receber um aumento de 10% no seu salário: " + (salario + (salario * 0.10)));
+                        } else {
+                            System.out.println("Não é possível determinar o aumento do salário para o valor inserido.");}
+                       }
+                         System.out.println("Digite S = Sim se deiseja continuar");
+                         decisaoSair = leitor.next().charAt(0);
+                          
+                                 }
+      
+                                    
+                          System.out.println("O valor total é: " + valortotal);                  
+    }
+             }
+    ```
+    
+- 28-Faça um algoritmo que receba o número do mês e mostre o mês correspondente. Valide mês inválido;
+    
+    ```java
+    import java. util.Scanner;
+    public class App { 
+        
+        public static void main(String[] args) { 
+             Scanner leitor = new Scanner(System.in); 
+           
+             int mes;
+            
+             char decisaoSair = 's';
+    
+             
+             
+             while (decisaoSair == 's' || decisaoSair == 'S'){
+             
+                  for (int n = 0; n < 2; n++){   
+                     
+                    System.out.println("qual o mês: ");
+                    mes = leitor.nextInt();
+    
+                        if (mes <= 12) {
+                            System.out.println("certo");
+         
+                        } else{
+                            System.out.println("Errado");
+                        } 
+                            
+    } // for
+                         System.out.println("Digite S = Sim se deiseja continuar");
+                         decisaoSair = leitor.next().charAt(0);
+                          
+                         
+    } //while      
+    } // Corpo
+    } //class
+    ```
+    
+- 29-Escreva um algoritmo que leia três valores inteiros distintos e os escreva em ordem crescente;
+    
+    ```java
+    //chat
+    public static void main(String[] args) { 
+             Scanner leitor = new Scanner(System.in); 
+           
+             int N1;
+             int N2;
+             int N3;
+             int A4;
+    
+             char decisaoSair = 's';
+     
+             while (decisaoSair == 's' || decisaoSair == 'S'){
+             
+                  for (int i = 0; i < 6; i++){  
+                      System.out.println("Digite um número");
+                      N1 = leitor.nextInt();
+                      
+                      System.out.println("Digite um número");
+                      N2 = leitor.nextInt();
+                      System.out.println("Digite um número");
+                      
+                      N3 = leitor.nextInt();
+          
+                      //for (int c = 0; c < 1; c++){ 
+                          
+                          if (N1 > N2 && N2 > N3){
+                              A4 = N2;
+                              N2 = N1;
+                              N1 = A4;
+                              A4 = N3;
+                              N2 = N3;
+                              N3 = A4;
+                              System.out.print(N1 +  "," + N2);       
+                              
+                              
+                          }else{ 
+                              System.out.println(N1 +  "," + N2 + "," + N3);}                                         
+                   
+    //}                 
+                         
+    } // for
+                         System.out.println("Digite S = Sim se deiseja continuar");
+                         decisaoSair = leitor.next().charAt(0);
+                                           
+    } //while                      
+    } // Corpo
+    } //class
+    ```
+    
+- 30-Dados três valores A, B e C, em que A e B são números reais e C é um caractere, pede-se para imprimir o
+resultado da operação de A por B se C for um símbolo de operador aritmético; caso contrário deve ser
+impressa uma mensagem de operador não definido. Tratar erro de divisão por zero;
+    
+    ```java
+    import java. util.Scanner;
+    public class App { 
+        
+        public static void main(String[] args) { 
+             Scanner leitor = new Scanner(System.in); 
+           
+             int A;
+             int B;
+             String C;
+    
+             char decisaoSair = 's';
+     
+             while (decisaoSair == 's' || decisaoSair == 'S'){
+             
+                  for (int i = 0; i < 6; i++){  
+                      System.out.println("Digite um número");
+                      A = leitor.nextInt();
+                      
+                      System.out.println("Digite um número");
+                      B = leitor.nextInt();
+                      System.out.println("Digite um número");
+                      
+                      C = leitor.next();
+          
+                      //for (int c = 0; c < 1; c++){ 
+                          
+                          if (C.equals("+") || C.equals("*") || C.equals("/") || C.equals("-")){
+                              System.out.print(A + "C" + B);}      
+                          else{ 
+                              System.out.println("erro");}                                         
+                   
+    //}                 
+                         
+    } // for
+                         System.out.println("Digite S = Sim se deiseja continuar");
+                         decisaoSair = leitor.next().charAt(0);
+                                           
+    } //while                      
+    } // Corpo
+    } //class
+    ```
+    
+- 31-Escreva um algoritmo que leia três valores inteiros e verifique se eles podem ser os lados de um triângulo.
+Se forem, informar qual o tipo de triângulo que eles formam: equilátero, isóscele ou escaleno.
+Propriedade: o comprimento de cada lado de um triângulo é menor do que a soma dos comprimentos dos
+outros dois lados.
+a. Triângulo Equilátero: aquele que tem os comprimentos dos três lados iguais;
+b. Triângulo Isóscele: aquele que tem os comprimentos de dois lados iguais.
+c. Triângulo equilátero é também isóscele;
+d. Triângulo Escaleno: aquele que tem os comprimentos de seus três lados diferentes;
+    
+    ```java
+    mport java. util.Scanner;
+    public class App { 
+        
+        public static void main(String[] args) { 
+             Scanner leitor = new Scanner(System.in); 
+           
+             int ladoA;
+             int ladoB;
+             int ladoC;
+    
+             char decisaoSair = 's';
+     
+             while (decisaoSair == 's' || decisaoSair == 'S'){
+             
+                  for (int i = 0; i < 2; i++){  
+                      System.out.println("Digite um número");
+                      ladoA = leitor.nextInt();
+                      
+                      System.out.println("Digite um número");
+                      ladoB = leitor.nextInt();
+                      
+                      System.out.println("Digite um número");
+                      ladoC = leitor.nextInt();
+          
+    //for (int c = 0; c < 1; c++){ 
+                          
+                        if (ladoA == ladoB && ladoB == ladoC){
+                          System.out.println("Equilátero");}      
+                             else if (ladoA == ladoB || ladoB == ladoC || ladoA == ladoC){
+                                System.out.println("Isóscele");}
+                                    else if(ladoA != ladoB & ladoB != ladoC){
+                                            System.out.println("todos os lados são diferentes, esse triângulo é um Escaleno");
+                                            }
+                                                          //equilátero
+    //}                 
+                         
+    } // for
+                         System.out.println("Digite S = Sim se deiseja continuar");
+                         decisaoSair = leitor.next().charAt(0);
+                                           
+    } //while                      
+    } // Corpo
+    } //class
+    ```
+    
+    - 32-A escola “APRENDER” faz o pagamento de seus professores por hora/aula. Faça um algoritmo que
+    calcule e exiba o salário de um professor. Sabe-se que o valor da hora/aula segue a tabela abaixo:
+    a. Professor Nível 1 R$12,00 por hora/aula;
+    b. Professor Nível 2 R$17,00 por hora/aula;
+    c. Professor Nível 3 R$25,00 por hora/aula.
+        
+        ```java
+        import java. util.Scanner;
+        public class App { 
+            
+            public static void main(String[] args) { 
+                 Scanner leitor = new Scanner(System.in); 
+               
+                 float NIVEL1 = 12.00f;
+                 float NIVEL2 = 17.00f;
+                 float NIVEL3 = 25.00f;
+                 String opcao;
+        
+                 char decisaoSair = 's';
+         
+                 while (decisaoSair == 's' || decisaoSair == 'S'){
+                 
+                      for (int i = 0; i < 2; i++){  
+                          System.out.println("Digite um número");
+                          float horasTrab = leitor.nextFloat();
+                          
+                         System.out.println("Digite um número");
+                          opcao = leitor.next();
+                          
+                         switch (opcao){
+                             case "1":
+                                     System.out.println(horasTrab * NIVEL1);
+                             break;
+                             case "2":
+                                    System.out.println(horasTrab * NIVEL2);
+                             break;
+                             case "3":
+                                    System.out.println(horasTrab * NIVEL3);
+                                     break;
+                              default:
+                                     System.out.println("opcao invalida!!");
+                         }
+                                    
+                         
+        //for (int c = 0; c < 1; c++){ 
+                              
+                         //float salario = horasTrab 
+                                                              //equilátero
+        //}                 
+                             
+        } // for
+                             System.out.println("Digite S = Sim se deiseja continuar");
+                             decisaoSair = leitor.next().charAt(0);
+                                               
+        } //while                      
+        } // Corpo
+        } //class
+        ```
+        
+- 33-Elabore um algoritmo que, dada a idade de um nadador. Classifique-o em uma das seguintes categorias:
+a. Infantil A = 5 - 7 anos;
+b. Infantil B = 8 - 10 anos;
+c. Juvenil A = 11- 13 anos;
+d. Juvenil B = 14 - 17 anos;
+e. Sênior = 18 - 25 anos.
+Apresentar mensagem “idade fora da faixa etária” quando for outro ano não contemplado;
+    
+    ```java
+    for (int i = 0; i < 3; i++){  
+                      System.out.println("Diga sua idade");
+                      idade = leitor.nextInt();
+                            
+                            if (idade >= 5 && idade <= 7){
+                                System.out.println("parebens. você tá na categoria Infantil A");}
+                            else if (idade >= 8 && idade <= 10){
+                                System.out.println("parebens. você tá na categoria Infantil B");}
+                            else if (idade >= 11 && idade <= 13){
+                                System.out.println("parebens. você tá na categoria Juvenil A");}
+                            else if (idade >= 14 && idade <= 17){
+                                System.out.println("parebens. você tá na categoria IJuvenil B");}
+                            else if (idade >= 18 && idade <= 25){
+                                System.out.println("parebens. você tá na categoria Sênior");}
+                            else{
+                                System.out.println("idade fora da faixa etária");}
+    ```
+    
+- Faça um algoritmo que calcule o valor da conta de luz de uma pessoa. Sabe-se que o cálculo da conta de
+luz segue a tabela abaixo:
+Tipo de Cliente Valor do KW/h
+a. (Residência) 0,60;
+b. (Comércio) 0,48;
+Curso de Lógica para Programação III
+Instrutor: Marcio Michelluzzi
+c. (Indústria) 1,29
+    
+    ```java
+    import java. util.Scanner;
+    public class App { 
+        
+        public static void main(String[] args) { 
+             Scanner leitor = new Scanner(System.in); 
+           
+    String Cliente;
+    String Residencia = "Residencia";
+    String Comercio = "Comercio";
+    String Industria = "Industria";
+    
+    // char decisaoSair = 's';
+    
+    // while (decisaoSair == 's' || decisaoSair == 'S') {
+    for (int i = 0; i < 1; i++) {
+        System.out.println("Qual o tipo de cliente?");
+        Cliente = leitor.next();
+    
+        if (Cliente.equals(Residencia)) {
+            System.out.println("Residencia: 0,60");
+        } else if (Cliente.equals(Comercio)) {
+            System.out.println("Comercio: 0,48");
+        } else if (Cliente.equals(Industria)) {
+            System.out.println("Industria: 1,29");
+        }
+    }
+    
+               }
+    ```
