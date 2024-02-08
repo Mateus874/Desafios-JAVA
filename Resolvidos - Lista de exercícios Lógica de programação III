@@ -1030,7 +1030,7 @@ Apresentar mensagem “idade fora da faixa etária” quando for outro ano não 
                                 System.out.println("idade fora da faixa etária");}
     ```
     
-- Faça um algoritmo que calcule o valor da conta de luz de uma pessoa. Sabe-se que o cálculo da conta de
+34 - Faça um algoritmo que calcule o valor da conta de luz de uma pessoa. Sabe-se que o cálculo da conta de
 luz segue a tabela abaixo:
 Tipo de Cliente Valor do KW/h
 a. (Residência) 0,60;
