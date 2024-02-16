@@ -1,78 +1,34 @@
-- 2. Crie uma classe para implementar uma ContaCorrente. A classe deve possuir os seguintes atributos: número da conta, nome do correntista e saldo. Os métodos são os seguintes: alterarNome, depósito e saque; No construtor, saldo é opcional, com valor default zero e os demais atributos são obrigatórios.
+import java. util.Scanner;
+public class App { 
     
-    ```java
-    import java. util.Scanner;
-    public class App { 
+    
+    
+    public static void main(String[] args) { 
         
-        
-        
-        public static void main(String[] args) { 
-            
-             Scanner leitor = new Scanner(System.in); 
-             
-             
-             pessoa ObjetoPessoa = new pessoa(1000.0f);
-             
-             //ObjetoPessoa.setSaldo(1000);// Define o saldo usando o método setSaldo
-             
-             //teste 1 (Mostar o nome de private)
-             System.out.println("Qual a sua nome: ");
-             ObjetoPessoa.setAlterarNome(leitor.next());
-             //mostar o nome digitado
-             System.out.println(ObjetoPessoa.getAlterarNome());
-             
-             //teste 2 (depositar)
-              System.out.println("Digite o valor do deposito: ");
-              ObjetoPessoa.setDepositar(leitor.nextFloat());
-              //mostar o nome digitado
-             System.out.println(ObjetoPessoa.getDepositar());
-              
-             
-              //teste 2 (Sacar)
-              System.out.println("Digite o valor do deposito: ");
-              ObjetoPessoa.setSacar(leitor.nextFloat());
-              //mostar o nome digitado
-              System.out.println(ObjetoPessoa.getSaldo());
-    } 
-    }
-    ```
-    
-    ```java
-    public class pessoa{
-               //atributos
-         private String nomeCorrentista;
-         private float numeroConta;
-         private float saldo;
-        
-         pessoa(float saldo){
-             this.saldo = saldo;}
-    
-                                  //métodos1
-                                        public void setAlterarNome(String novoNome){
-                                        this.nomeCorrentista = novoNome;}  
-    
-                                        public String getAlterarNome(){
-                                        return nomeCorrentista;}
-    
-                                 //métodos2
-                                        
-                                       public void setDepositar(float novoSaldo){
-                                       this.saldo += novoSaldo;}
-                                       
-                                        public float getDepositar(){
-                                        return saldo;}              
-                                        
-                                  //métodos3
-                                            
-                                         public float setSacar(float valorSaque) {
-                                             if (valorSaque <= getSaldo()) {
-                                             this.saldo -= valorSaque;
-                                             return valorSaque; // Retorna o valor sacado
-                                                }   else {
-                                                    return 0; }}// Retorna 0 para indicar um saque sem sucesso
-                                         
-                                public float getSaldo() {
-                                    return saldo;
-                                }
-                                }
-    ```
+         Scanner leitor = new Scanner(System.in); 
+         
+         
+         pessoa ObjetoPessoa = new pessoa(1000.0f);
+         
+         //ObjetoPessoa.setSaldo(1000);// Define o saldo usando o método setSaldo
+         
+         //teste 1 (Mostar o nome de private)
+         System.out.println("Qual a sua nome: ");
+         ObjetoPessoa.setAlterarNome(leitor.next());
+         //mostar o nome digitado
+         System.out.println(ObjetoPessoa.getAlterarNome());
+         
+         //teste 2 (depositar)
+          System.out.println("Digite o valor do deposito: ");
+          ObjetoPessoa.setDepositar(leitor.nextFloat());
+          //mostar o nome digitado
+         System.out.println(ObjetoPessoa.getDepositar());
+          
+         
+          //teste 2 (Sacar)
+          System.out.println("Digite o valor do deposito: ");
+          ObjetoPessoa.setSacar(leitor.nextFloat());
+          //mostar o nome digitado
+          System.out.println(ObjetoPessoa.getSaldo());
+} 
+}
