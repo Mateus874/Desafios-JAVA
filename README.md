@@ -1,6 +1,6 @@
 "Montando"
 
-Atividades de fixação de contéudo e teste de lógicas;
+Mini projetos e atividades de fixação de contéudo;
 
 Os projetos são dividos em grupos com suas letras no começo:
 A: Dificies
