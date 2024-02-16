@@ -34,7 +34,7 @@ public class titulo implements Comparable<titulo> {
 
     @Override
     public int compareTo(titulo o) {
-        return this.nome.compareTo(o.getNome());
+        return this.nome.compareToIgnoreCase(o.getNome());
     }
 }
 
