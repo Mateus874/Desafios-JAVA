@@ -3,8 +3,8 @@
 Mini projetos e atividades de fixação de contéudo;
 
 Os projetos são dividos em grupos com suas letras no começo:
-A: Dificies
-B: Médios
+A: Dificies - 
+B: Médios -
 C: Básicos
 
 ----
