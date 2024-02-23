@@ -9,8 +9,8 @@ C: Básicos
 
 ----
 
-Alura: Site de cursos
-Beecrowd: Teste de lógicas
+Alura: Site de cursos - 
+Beecrowd: Teste de lógicas - 
 Capgemini: BootCampt by capgemini
 
 -------
