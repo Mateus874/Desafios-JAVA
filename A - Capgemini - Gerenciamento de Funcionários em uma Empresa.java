@@ -1,4 +1,4 @@
---------------------------------------------------------------
+/*--------------------------------------------------------------
 7. A fim de representar funcionários em uma empresa, crie uma classe chamada Funcionario que inclui as
 três informações a seguir como atributos:
 a. um primeiro nome,
@@ -9,9 +9,9 @@ cada atributo. Se o salário mensal não for positivo, configure-o como 0.0. Esc
 que demonstra as capacidades da classe. Crie duas instâncias da classe e exiba o salário anual de cada
 instância. Então dê a cada empregado um aumento de 10% e exiba novamente o salário anual de cada
 empregado.
----------------------------------------------------------------
+---------------------------------------------------------------*/
 
--------------------- MAIN TESTES -----------------------------
+//-------------------- MAIN TESTES -----------------------------
 
 public static void main(String[] args) { 
     Scanner leitor = new Scanner(System.in);
@@ -22,8 +22,8 @@ public static void main(String[] args) {
     Empregado1.Aumento(10);
 
     System.out.print("Novo salário de Empregado1: " + Empregado1.getSalarioMensal());
-------------------------------------------------------------------
-//CLASS FUNCIONARIO
+
+//CLASS FUNCIONARIO ------------------------------------------------------------------
 
 public class Funcionario{
            //atributos
@@ -46,7 +46,7 @@ public class Funcionario{
              
 
 
-                                     //metodo = a. media: calcula a média final do aluno (cada prova tem peso 2,5 e o trabalho tem peso 2)
+                                     //metodo Aumento
                                         public void Aumento(double porcentagem){
                                         double aumento = salarioMensal * (porcentagem / 100);  
                                         this.salarioMensal += aumento;
