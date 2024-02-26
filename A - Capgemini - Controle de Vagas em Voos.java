@@ -1,4 +1,4 @@
---------------------------------------------------------------
+/*--------------------------------------------------------------
 9. Escreva uma classe em que cada objeto representa um Voo que acontece em determinada data e em
 determinado horário. Cada vôo possui no máximo 100 passageiros, e a classe permite controlar a ocupação das vagas. A classe deve ter os seguintes métodos:
 a. Construtor: configura os dados do vôo (recebidos como parâmetro): número do vôo, data (para
@@ -10,10 +10,10 @@ verdadeiro se a cadeira ainda não estiver ocupada (operação foi bem sucedida)
 contrário
 e. Vagas: retorna o número de cadeiras vagas disponíveis (não ocupadas) no vôo
 f. GetVoo: retorna o número do vôO
---------------------------------------------------------------
+--------------------------------------------------------------*/
+
 package Exercecios;
-/**
- */
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
