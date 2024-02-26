@@ -1,4 +1,4 @@
---------------------------------------------------------------------
+/*--------------------------------------------------------------------
 8. Escreva uma classe Data cuja instância (objeto) represente uma data. Esta classe deverá dispor dos
 seguintes métodos:
 a. Construtor: define a data que determinado objeto (através de parâmetro), este método verifica se a data está correta, caso não esteja a data é configurada como 01/01/0001
@@ -13,7 +13,7 @@ f. GetAno: retorna o ano da data
 g. IsBissexto: retorna verdadeiro se o ano da data corrente for bissexto e falso caso contrário
 h. Clone: o objeto clona a si próprio, para isto, ele cria um novo objeto da classe Data com os
 mesmos valores de atributos e retorna sua referência pelo método
------------------------------------------------------------------------
+-----------------------------------------------------------------------*/
 //class
 import java.text.SimpleDateFormat;
 import java.util.Date;
