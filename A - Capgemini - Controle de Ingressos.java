@@ -1,4 +1,4 @@
---------------------------------------------------------------------------
+/*--------------------------------------------------------------------------
 - 10.Crie uma classe chamada Ingresso, que possui um valor em reais e um mé
 todo imprimirValor. Crie uma
 classe IngressoVIP, que herda de Ingresso e possui um valor adicional. Crie um mé
@@ -10,7 +10,7 @@ IngressoVIP, mostrando a diferença de preços.
     2 - Crie umaclasse Ingresso VIP, que herda de Ingresso e possui um valor adicional.
     3 - Crie um método que retorne o valor do ingresso VIP (com o adicional incluído).
     4- Crie um programa para criar as instâncias de Ingresso e Ingresso VIP, mostrando a diferença de preços.
------------------------------------------------------------------------------
+-----------------------------------------------------------------------------*/
 
 
 import java.text.ParseException;
