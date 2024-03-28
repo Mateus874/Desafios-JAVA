@@ -1,7 +1,7 @@
-- 2 - Faça um algoritmo que receba dois números e ao final mostre a soma, subtração, multiplicação e a divisão
-dos dois números lidos;
+/* 2 - Faça um algoritmo que receba dois números e ao final mostre a soma, subtração, multiplicação e a divisão
+dos dois números lidos; */
     
-    ```java
+  
     numero1 = leitorScanner.nextInt();
             numero2 = leitorScanner.nextInt();
             
@@ -14,4 +14,4 @@ dos dois números lidos;
             System.out.println(subtração);
             System.out.println(multiplicacao);
             System.out.println(divisao);
-    ```
+  
