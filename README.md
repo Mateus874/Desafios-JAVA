@@ -1,6 +1,6 @@
 "Portfólio JAVA Montando"
 
-Mini projetos e atividades de fixação de contéudo em JAVA, envolvendo estrutura de dados e lógica de programação;
+Pequenos projetos e desafios em JAVA de fixação de contéudo em JAVA, envolvendo estrutura de dados e lógica de programação;
 
 Os projetos são dividos em grupos com suas letras no começo:
 A: Dificies - 
